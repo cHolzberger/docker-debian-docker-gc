@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set-selections gc-build
+apply-apt
+
+cd /usr/src
+git clone https://github.com/spotify/docker-gc.git
+cd docker-gc
+debuild -us -uc -b
+cd ..
+dpkg -i *.deb
+
+rm -rf /usr/src/docker-gc
+
+unset-selections gc-build
+apply-apt

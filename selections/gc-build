@@ -1,0 +1,6 @@
+git
+devscripts
+debhelper
+build-essential
+dh-make
+fakeroot
